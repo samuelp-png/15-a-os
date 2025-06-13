@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis 15 Años</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Fuente personalizada The Seasons -->
+  <style>
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('fonts/TheSeasons.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("img/fondo .jpg") center center no-repeat fixed;
+      background-size: cover;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 40px 20px;
+    }
+
+    section {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+    }
+
+    .video-container {
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+      position: relative;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .contador-imagen {
+      background: url("img/falta.jpg") center center no-repeat;
+      background-size: contain;
+      background-color: transparent;
+      border-radius: 20px;
+      padding: 130px 20px;
+      min-height: 100px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #000;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+
+    .countdown-number {
+      font-size: 50px;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      color: #c5469c;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #f8cde6;
+      color: #000000;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 0 10px #292828;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #f3b8db;
+    }
+
+    .ubicacion-imagen {
+      background: url('img/ubicacion.jpg') center center / cover no-repeat;
+      position: relative;
+      height: 300px;
+      border-radius: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+    }
+
+    .ubicacion-imagen .btn {
+      position: absolute;
+      bottom: 62px;
+      right: 100px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-family: 'TheSeasons', cursive;
+      background-color: #f9c1c3;
+      color: #ffffff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Música de fondo automática -->
+  <audio id="musica" src="mp3/cancion.mp4" autoplay loop></audio>
+
+  <div class="overlay">
+
+    <!-- 🎥 Video de bienvenida -->
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="mp3/antonia.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <!-- ⏳ Contador -->
+    <section class="contador-imagen">
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">--</div>
+          <div class="countdown-label">días</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">--</div>
+          <div class="countdown-label">horas</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">--</div>
+          <div class="countdown-label">minutos</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">--</div>
+          <div class="countdown-label">segundos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📍 Imagen de ubicación con botón -->
+    <div class="ubicacion-imagen">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Salón+Galería+Guillermo+8A,+Guarne,+Colombia" target="_blank">Cómo llegar</a>
+    </div>
+
+    <!-- 🎶 Playlist Spotify -->
+    <a href="https://open.spotify.com/playlist/2rvDL5lYXMFPy5Ao1rls8m?si=f427bba869754c73&pt=834b630a468e8915216c53d6ee41cd4d" target="_blank">
+      <div class="video-container">
+        <video autoplay loop muted>
+          <source src="mp3/spotify.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+    </a>
+
+    <!-- ✅ Confirmación con video -->
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="mp3/confirmacion (1).mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+      <button class="btn" onclick="confirmarAsistencia()" style="position: absolute; bottom: 40px; right: 70px; font-family: 'TheSeasons', cursive; background-color:#f9c1c3; color: white; font-size: 16px; padding: 10px 20px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        CONFIRMAR ASISTENCIA
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    function confirmarAsistencia() {
+      const nombre = prompt("¿Cuál es tu nombre?");
+      if (nombre) {
+        const mensaje = `Hola, soy ${nombre}, confirmo mi asistencia a los 15 años de Antonia.`;
+        window.open(`https://wa.me/573144859559?text=${encodeURIComponent(mensaje)}`, '_blank');
+      }
+    }
+
+    // Reproducción forzada de música
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById("musica");
+      const playAudio = () => {
+        audio.play().catch(() => {});
+      };
+      playAudio();
+      document.body.addEventListener('click', playAudio, { once: true });
+      document.body.addEventListener('touchstart', playAudio, { once: true });
+    });
+
+    // Contador regresivo
+    const targetDate = new Date("September 6, 2025 18:00:00").getTime();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        document.getElementById("countdown").innerHTML = "Ya ha llegado el día";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }, 1000);
+  </script>
+</body>
+</html>
